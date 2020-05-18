@@ -11,42 +11,42 @@
 | US [English](README.md) | RU [Russian](README_RU.md) |
 |---------------------------|---------------------------|
 
-Create Minecraft bots with a powerful, stable, and high level JavaScript API.
+Güçlü, sabit ve yüksek seviye JavaScript API'ı ile Minecraft Botları oluşturun.
 
-## Features
+## Özellikler
 
- * Supports Minecraft 1.8, 1.9, 1.10, 1.11, 1.12, 1.13, 1.14 and 1.15.
- * Entity knowledge and tracking.
- * Block knowledge. You can query the world around you.
- * Basic physics and movement - currently blocks are either "solid" or "empty".
- * Attacking entities and using vehicles.
- * Inventory management.
- * Crafting, chests, dispensers, enchantment tables.
- * Digging and building.
- * Miscellaneous stuff such as knowing your health and whether it is raining.
- * Activating blocks and using items.
- * Chat.
+ * 1.8, 1.9, 1.10, 1.11, 1.12, 1.13, 1.14 ve 1.15'i destekler.
+ * Entity bilgisi ve takip etme.
+ * Blok bilgisi, etrafındaki dünyayı gör.
+ * Basit fizik ve hareket - şu anlık bloklar "katı" veya "boş".
+ * Entitylere saldırmak ve araçlara binebilmek
+ * Envanter düzenleme
+ * Eşya üretme, sandıklar, fırlatıcılar, büyü masaları.
+ * Kazma ve inşa etme.
+ * Can surumunu ve yağmurun yağdığını bilme gibi diğer özellikler.
+ * Blokları aktifleştirme ve eşyaları kullanma.
+ * Sohbet.
 
-### Roadmap
+### Yol Haritası
 
- * Brewing stands, and anvils.
- * Better physics (support doors, ladders, water, etc).
- * Want to contribute on something important for PrismarineJS ? go to https://github.com/PrismarineJS/mineflayer/wiki/Big-Prismarine-projects
+ * İksir masaları ve Örsler.
+ * Daha iyi fizik (kapılar, merdivenler, su vb.).
+ * PrismarineJS için büyük bir projeye katkıda bulunmak ister misin? Buraya git: https://github.com/PrismarineJS/mineflayer/wiki/Big-Prismarine-projects
 
-## Usage
+## Kullanım
 
-Without version specified, the version of the server will be guessed automatically, you can set a specific one using the version option.
-For example `version:"1.8"`.
+Version yazılmazsa sunucunun versiyonu otomatik olarak tahmin edilir. Bunun yerine bir versiyon belirtebilirsin.
+Örnek olarak `version:"1.8"`.
 
-### Echo Example
+### Echo Örneği
 ```js
 var mineflayer = require('mineflayer');
 var bot = mineflayer.createBot({
-  host: "localhost", // optional
-  port: 25565,       // optional
-  username: "email@example.com", // email and password are required only for
-  password: "12345678",          // online-mode=true servers
-  version: false                 // false corresponds to auto version detection (that's the default), put for example "1.8.8" if you need a specific version
+  host: "localhost", // isteğe bağlı
+  port: 25565,       // isteğe bağlı
+  username: "email@example.com", // email ve şifre sadece
+  password: "12345678",          // online-mode=true sunucular için gereklidir
+  version: false                 // false = otomatik tahmin etme, belirleyebilirsiniz
 });
 bot.on('chat', function(username, message) {
   if (username === bot.username) return;
@@ -69,28 +69,25 @@ set DEBUG=minecraft-protocol
 node your_script.js
 ```
 
-#### More Examples
+#### Daha fazla Örnek
 
- * In the [examples](https://github.com/PrismarineJS/mineflayer/tree/master/examples) folder.
+ * [Örnekler](https://github.com/PrismarineJS/mineflayer/tree/master/examples) klasöründe.
  * [vogonistic's REPL bot](https://gist.github.com/vogonistic/4631678)
 
-## Third Party Plugins
+## Üçüncü Parti Pluginler
 
-Mineflayer is pluggable; anyone can create a plugin that adds an even
-higher level API on top of Mineflayer.
+Mineflayer'a plugin eklenebilir; isteyen herkez Mineflayer'in üstüne daha yüksek seviyde
+API yazabilir.
 
- * [navigate](https://github.com/andrewrk/mineflayer-navigate/) - get around
-   easily using A* pathfinding. [YouTube Demo](https://www.youtube.com/watch?v=O6lQdmRz8eE)
- * [radar](https://github.com/andrewrk/mineflayer-radar/) - web based radar
-   interface using canvas and socket.io. [YouTube Demo](https://www.youtube.com/watch?v=FjDmAfcVulQ)
+ * [navigate](https://github.com/andrewrk/mineflayer-navigate/) - A* yol bulma ile dünyada dolaş [YouTube Demo](https://www.youtube.com/watch?v=O6lQdmRz8eE)
+ * [radar](https://github.com/andrewrk/mineflayer-radar/) - socket.io ve canvas kullanan web arayüz [YouTube Demo](https://www.youtube.com/watch?v=FjDmAfcVulQ)
  * [blockfinder](https://github.com/Darthfett/mineflayer-blockFinder) - find blocks in the 3D world
- * [scaffold](https://github.com/andrewrk/mineflayer-scaffold) - get to
-   a target destination even if you have to build or break blocks to do so.
+ * [scaffold](https://github.com/andrewrk/mineflayer-scaffold) - dünyada dolaş, blokları kırman ve koyman gerekse bile.
    [YouTube Demo](http://youtu.be/jkg6psMUSE0)
- * [auto-auth](https://github.com/G07cha/MineflayerAutoAuth) - chat-based bot authentication
- * [Armor Manager](https://github.com/G07cha/MineflayerArmorManager) - automatic armor managment
- * [Bloodhound](https://github.com/Nixes/mineflayer-bloodhound) - determine who and what is responsible for damage to another entity
- * [tps](https://github.com/SiebeDW/mineflayer-tps) - get the current tps (processed tps)
+ * [auto-auth](https://github.com/G07cha/MineflayerAutoAuth) - sohbette kullanılan giriş sistemi
+ * [Armor Manager](https://github.com/G07cha/MineflayerArmorManager) - otomatik zırh değiştirme
+ * [Bloodhound](https://github.com/Nixes/mineflayer-bloodhound) - bir entitye kimin hasar verdiğini bul
+ * [tps](https://github.com/SiebeDW/mineflayer-tps) - tps'i bulma (processed tps)
 
 ## Projects Using Mineflayer
 
